@@ -92,6 +92,7 @@ public class Bf_HyundaiCarFactory {
         } else if ("소나타".equals(model)) {
             carBaseColor = BASIC_COLOR_SONATA;
             colorPrice = COLOR_PRICE_SONATA;
+
         } else if ("그랜저".equals(model)) {
             carBaseColor = BASIC_COLOR_GRANDEUL;
             colorPrice = COLOR_PRICE_GRANDEUL;
