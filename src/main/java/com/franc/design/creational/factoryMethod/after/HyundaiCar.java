@@ -1,11 +1,12 @@
-package com.franc.design.creational.factoryMethod.factoryMethod;
+package com.franc.design.creational.factoryMethod.after;
 
 public class HyundaiCar {
 
-    private String model;   // 차종
+    private String model;   // 차량 모델
     private String color;   // 색상
     private String grade;   // 트림
-    private int price;   // 가격
+    private int price;     // 가격
+
 
     public String getModel() {
         return model;
@@ -45,7 +46,7 @@ public class HyundaiCar {
                 "model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 ", grade='" + grade + '\'' +
-                ", price='" + price + '\'' +
+                ", price=" + price +
                 '}';
     }
 }

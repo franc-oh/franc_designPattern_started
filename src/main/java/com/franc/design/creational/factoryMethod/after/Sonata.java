@@ -1,11 +1,11 @@
-package com.franc.design.creational.factoryMethod.factoryMethod;
+package com.franc.design.creational.factoryMethod.after;
 
 public class Sonata extends HyundaiCar {
 
-    private String model = "소나타";
+    private static final String MODEL = "소나타";
 
     public Sonata(String color, String grade) {
-        setModel(model);
+        setModel(MODEL);
         setColor(color);
         setGrade(grade);
     }

@@ -1,19 +1,12 @@
-package com.franc.design.creational.factoryMethod.notFactoryMethod;
+package com.franc.design.creational.factoryMethod.before;
 
-public class Bf_HyundaiCar {
+public class HyundaiCar_Bf {
 
-    private String model;   // 차종
+    private String model;   // 차량 모델
     private String color;   // 색상
     private String grade;   // 트림
-    private int price;      // 가격
+    private int price;     // 가격
 
-
-    public Bf_HyundaiCar(String model, String color, String grade, int price) {
-        this.model = model;
-        this.color = color;
-        this.grade = grade;
-        this.price = price;
-    }
 
     public String getModel() {
         return model;
@@ -53,7 +46,7 @@ public class Bf_HyundaiCar {
                 "model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 ", grade='" + grade + '\'' +
-                ", price='" + price + '\'' +
+                ", price=" + price +
                 '}';
     }
 }

@@ -1,11 +1,11 @@
-package com.franc.design.creational.factoryMethod.factoryMethod;
+package com.franc.design.creational.factoryMethod.after;
 
 public class Avante extends HyundaiCar {
 
-    private String model = "아반떼";
+    private static final String MODEL = "아반떼";
 
     public Avante(String color, String grade) {
-        setModel(model);
+        setModel(MODEL);
         setColor(color);
         setGrade(grade);
     }

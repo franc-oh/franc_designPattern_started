@@ -1,10 +1,11 @@
 package com.franc.design.creational.factoryMethod;
 
-import com.franc.design.creational.factoryMethod.factoryMethod.AvanteCarFactory;
-import com.franc.design.creational.factoryMethod.factoryMethod.HyundaiCar;
-import com.franc.design.creational.factoryMethod.factoryMethod.SonataCarFactory;
-import com.franc.design.creational.factoryMethod.notFactoryMethod.Bf_HyundaiCar;
-import com.franc.design.creational.factoryMethod.notFactoryMethod.Bf_HyundaiCarFactory;
+import com.franc.design.creational.factoryMethod.after.AvanteCarFactory;
+import com.franc.design.creational.factoryMethod.after.GrandeurCarFactory;
+import com.franc.design.creational.factoryMethod.after.HyundaiCar;
+import com.franc.design.creational.factoryMethod.after.SonataCarFactory;
+import com.franc.design.creational.factoryMethod.before.HyundaiCarFactory_Bf;
+import com.franc.design.creational.factoryMethod.before.HyundaiCar_Bf;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -12,27 +13,26 @@ import java.util.Locale;
 public class Client {
 
     public static void main(String[] args) {
-        Client client = new Client();
+        // 1. 일반
+        HyundaiCar_Bf avante = new HyundaiCarFactory_Bf().orderCar("아반떼", "WHITE", "MODERN");
+        System.out.println(avante.toString());
 
-        /* 팩토리메소드 적용 X */
-        Bf_HyundaiCar myCar1 = Bf_HyundaiCarFactory.orderCar("아반떼", "WHITE", "MODERN");
-        System.out.println(myCar1.toString());
-        System.out.println();
+        HyundaiCar_Bf sonata = new HyundaiCarFactory_Bf().orderCar("소나타", "GOLD", "NOBLE");
+        System.out.println(sonata.toString());
 
-        Bf_HyundaiCar myCar2 = Bf_HyundaiCarFactory.orderCar("그랜저", "SILVER", "NOBLE");
-        System.out.println(myCar2.toString());
-        System.out.println();
+        System.out.println("====================================");
 
-        /* 팩토리메소드 적용 O */
-        HyundaiCar myCar3 = new AvanteCarFactory().orderCar("BLACK", "SMART");
-        System.out.println(myCar3.toString());
-        System.out.println();
+        // 2. 팩토리 메소드
+        HyundaiCar avante2 = new AvanteCarFactory().orderCar("WHITE", "MODERN");
+        System.out.println(avante2.toString());
 
-        HyundaiCar myCar4 = new SonataCarFactory().orderCar("SILVER", "NOBLE");
-        System.out.println(myCar4.toString());
-        System.out.println();
+        HyundaiCar sonata2 = new SonataCarFactory().orderCar("BLUE", "SMART");
+        System.out.println(sonata2.toString());
 
+        HyundaiCar grandeur2 = new GrandeurCarFactory().orderCar("METALIC_SILVER", "NOBLE");
+        System.out.println(grandeur2.toString());
 
+        System.out.println("====================================");
 
         /*
             팩토리 메소드 패턴의 사용 예 - Java.Lang.Calendar
@@ -49,6 +49,5 @@ public class Client {
 
         //class java.util.JapaneseImperialCalendar
         System.out.println(Calendar.getInstance(Locale.forLanguageTag("ja-JP-x-lvariant-JP")).getClass());
-
     }
 }
