@@ -13,5 +13,5 @@ public class App {
 
         PaymentService paymentService2 = new PaymentService(new ComplexPaymentService(new PointService()));
         paymentService2.payment("user1", 4000);
-    }
+    } 
 }
